@@ -3,83 +3,88 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   title: {
     id: 'discussions.app.title',
-    defaultMessage: 'Discussions',
+    defaultMessage: 'Thảo luận',
   },
   searchAllPosts: {
     id: 'discussions.posts.actionBar.searchAllPosts',
-    defaultMessage: 'Search all posts',
+    defaultMessage: 'Tìm kiếm tất cả bài viết',
     description: 'Placeholder text in search box',
   },
   search: {
     id: 'discussions.posts.actionBar.search',
     defaultMessage: `{page, select,
-      topics {Search topics}
-      posts {Search all posts}
-      learners {Search learners}
-      myPosts {Search all posts}
+      topics {Tìm kiếm theo chủ đề}
+      posts {Tìm kiếm tất cả bài viết}
+      learners {Tìm kiếm người học}
+      myPosts {Tìm kiếm bài viết của tôi}
       other {{page}}
     }`,
     description: 'Placeholder text in search box',
   },
   searchInfo: {
     id: 'discussions.actionBar.searchInfo',
-    defaultMessage: 'Showing {count} results for "{text}"',
+    defaultMessage: 'Đang hiển thị {count} kết quả cho "{text}"',
     description: 'Message displayed when user performs a search',
   },
   searchRewriteInfo: {
     id: 'discussions.actionBar.searchRewriteInfo',
-    defaultMessage: 'No results found for "{searchString}". Showing {count} results for "{textSearchRewrite}".',
-    description: 'Message displayed when user performs a search and search query is rewritten because matching results are not found',
+    defaultMessage:
+      'Không tìm thấy kết quả cho "{searchString}". Đang hiển thị {count} kết quả cho "{textSearchRewrite}".',
+    description:
+      'Message displayed when user performs a search and search query is rewritten because matching results are not found',
   },
   searchInfoSearching: {
     id: 'discussions.actionBar.searchInfoSearching',
-    defaultMessage: 'Searching...',
+    defaultMessage: 'Đang tìm kiếm...',
     description: 'Message displayed when user performs a search',
   },
   clearSearch: {
     id: 'discussions.actionBar.clearSearch',
-    defaultMessage: 'Clear results',
+    defaultMessage: 'Xóa kết quả',
     description: 'Button to clear search',
   },
   addAPost: {
     id: 'discussion.posts.actionBar.add',
-    defaultMessage: 'Add a post',
+    defaultMessage: 'Tạo bài thảo luận',
     description: 'Button to add a new discussion post',
   },
   close: {
     id: 'discussion.posts.actionBar.close',
-    defaultMessage: 'Close',
-    description: 'Alt description for close icon button for closing in-context sidebar.',
+    defaultMessage: 'Đóng',
+    description:
+      'Alt description for close icon button for closing in-context sidebar.',
   },
   confirmEmailTitle: {
     id: 'discussion.posts.confirm.email.title',
-    defaultMessage: 'Confirm your email',
+    defaultMessage: 'Xác nhận email của bạn',
     description: 'Confirm email title for unverified users.',
   },
   confirmEmailDescription: {
     id: 'discussion.posts.confirm.email.description',
-    defaultMessage: 'You’ll need to confirm your email before you can participate in discussions. Click the button below to receive an email with a confirmation link. Open it, then refresh this page to start contributing.\n\nCan’t find it? Check your spam folder or resend the email.',
+    defaultMessage:
+      'Bạn cần xác nhận email trước khi có thể tham gia thảo luận. Nhấn nút bên dưới để nhận email chứa liên kết xác nhận. Mở email đó, sau đó tải lại trang này để bắt đầu đóng góp.\n\nKhông thấy email? Hãy kiểm tra thư mục spam hoặc gửi lại email.',
     description: 'Confirm email description for unverified users.',
   },
   confirmEmailButton: {
     id: 'discussion.posts.confirm.email.button',
-    defaultMessage: 'Send confirmation link',
+    defaultMessage: 'Gửi liên kết xác nhận',
     description: 'Confirmation link email button.',
   },
   closeButton: {
     id: 'discussion.posts.close.button',
-    defaultMessage: 'Close',
+    defaultMessage: 'Đóng',
     description: 'Close button.',
   },
   postLimitTitle: {
     id: 'discussion.posts.limit.title',
-    defaultMessage: 'Post limit reached',
-    description: 'Confirm email title for unverified users.',
+    defaultMessage: 'Đã đạt giới hạn đăng bài',
+    description: 'Post limit title for users who reached the limit.',
   },
   postLimitDescription: {
     id: 'discussion.posts.limit.description',
-    defaultMessage: 'You’ve reached the current post limit. Please try again later.',
-    description: 'Confirm email description for unverified users.',
+    defaultMessage:
+      'Bạn đã đạt đến giới hạn số bài có thể đăng. Vui lòng thử lại sau.',
+    description: 'Post limit description for users who reached the limit.',
   },
 });
 

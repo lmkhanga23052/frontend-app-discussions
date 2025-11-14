@@ -3,63 +3,63 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   reported: {
     id: 'discussions.learner.reported',
-    defaultMessage: '{reported} reported',
+    defaultMessage: '{reported} bài bị báo cáo',
   },
   previouslyReported: {
     id: 'discussions.learner.previouslyReported',
-    defaultMessage: '{previouslyReported} previously reported',
+    defaultMessage: '{previouslyReported} bài từng bị báo cáo',
   },
   lastActive: {
     id: 'discussions.learner.lastLogin',
-    defaultMessage: 'Last active {lastActiveTime}',
+    defaultMessage: 'Hoạt động lần cuối {lastActiveTime}',
   },
   loadMore: {
     id: 'discussions.learner.loadMostLearners',
-    defaultMessage: 'Load more',
+    defaultMessage: 'Tải thêm',
     description: 'Text on button for loading more learners',
   },
   back: {
     id: 'discussions.learner.back',
-    defaultMessage: 'Back',
+    defaultMessage: 'Quay lại',
     description: 'Text on button for back to learners list',
   },
   activityForLearner: {
     id: 'discussions.learner.activityForLearner',
-    defaultMessage: 'Activity for {username}',
+    defaultMessage: 'Hoạt động của {username}',
     description: 'Text for learners post header',
   },
   mostActivity: {
     id: 'discussions.learner.mostActivity',
-    defaultMessage: 'Most activity',
+    defaultMessage: 'Nhiều hoạt động nhất',
     description: 'Text for learners sorting by most activity',
   },
   reportedActivity: {
     id: 'discussions.learner.reportedActivity',
-    defaultMessage: 'Reported activity',
+    defaultMessage: 'Hoạt động bị báo cáo',
     description: 'Text for learners sorting by reported activity',
   },
   recentActivity: {
     id: 'discussions.learner.recentActivity',
-    defaultMessage: 'Recent activity',
+    defaultMessage: 'Hoạt động gần đây',
     description: 'Text for learners sorting by recent activity',
   },
   sortFilterStatus: {
     id: 'discussions.learner.sortFilterStatus',
-    defaultMessage: `All learners sorted by {sort, select,
-      flagged {reported activity}
-      activity {most activity}
+    defaultMessage: `Tất cả người học được sắp xếp theo {sort, select,
+      flagged {hoạt động bị báo cáo}
+      activity {nhiều hoạt động nhất}
       other {{sort}}
     }`,
     description: 'Text for current selected learners filter',
   },
   allActivity: {
     id: 'discussion.learner.allActivity',
-    defaultMessage: 'All activity',
+    defaultMessage: 'Tất cả hoạt động',
     description: 'Tooltip text for all activity icon',
   },
   posts: {
     id: 'discussion.learner.posts',
-    defaultMessage: 'Posts',
+    defaultMessage: 'Bài viết',
     description: 'Tooltip text for all posts icon',
   },
 });
