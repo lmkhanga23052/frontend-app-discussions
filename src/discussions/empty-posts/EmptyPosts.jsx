@@ -35,11 +35,13 @@ const EmptyPosts = ({ subTitleMessage, openRestrictionDialogue }) => {
     }
   }, [shouldShowEmailConfirmation, openRestrictionDialogue, contentCreationRateLimited]);
 
-  let title = messages.noPostSelected;
+    let title = messages.noPostSelected;
   let subTitle = null;
-  let action = null;
-  let actionText = null;
+  // luôn cho phép tạo bài thảo luận
+  let action = addPost;
+  let actionText = postMessages.addAPost;
   let fullWidth = false;
+
 
   const isEmpty = [0, null].includes(totalThreads) && !isFiltered;
 

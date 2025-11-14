@@ -699,3 +699,324 @@ th, td {
     font-size: 10px;
   }
 }
+
+
+
+
+
+/* =================== CUSC — Discussion Empty State =================== */
+
+.cusc-discussion-empty-wrapper {
+  position: relative;          /* NEW: để bubble bám theo toàn vùng này */
+  overflow: hidden;            /* tránh tràn ra ngoài scrollbar */
+  padding: 32px 48px 40px;
+  background:
+    radial-gradient(140% 140% at 10% 0%, rgba(0, 86, 161, 0.12), transparent 55%),
+    radial-gradient(160% 160% at 100% 100%, rgba(16, 185, 129, 0.16), transparent 50%),
+    #ffffff;
+  border-radius: 0px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+
+  .cusc-discussion-empty-card {
+    position: relative;
+    max-width: 840px;
+    width: 100%;
+    margin-inline: auto;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+
+  .cusc-discussion-empty-card {
+    /* CHỈ CÒN KHUNG CHỨA NỘI DUNG, KHÔNG NỀN RIÊNG */
+    position: relative;
+    max-width: 760px;     /* giữ nội dung gọn ở giữa */
+    width: 100%;
+    margin-inline: auto;
+    padding: 0;           /* padding sẽ để cho inner */
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+
+  .cusc-discussion-empty-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cusc-discussion-empty-pill {
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    font-size: 12px;
+    color: #6b7280;
+    backdrop-filter: blur(6px);
+  }
+
+  .cusc-discussion-empty-pill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent, #10b981);
+    box-shadow: 0 0 0 5px rgba(16, 185, 129, 0.25);
+  }
+
+  .cusc-discussion-empty-illustration {
+    width: 150px;
+    height: 150px;
+    border-radius: 40px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background:
+      radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.95), transparent 55%),
+      radial-gradient(circle at 100% 100%, rgba(0, 86, 161, 0.24), transparent 55%),
+      linear-gradient(135deg, #ffffff, #eff6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cusc-discussion-empty-illustration::before,
+  .cusc-discussion-empty-illustration::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    border: 1px dashed rgba(148, 163, 184, 0.8);
+    inset: 12px;
+    opacity: 0.6;
+    animation: cusc-orbit 18s linear infinite;
+  }
+
+  .cusc-discussion-empty-illustration::after {
+    inset: 22px;
+    animation-duration: 26s;
+    animation-direction: reverse;
+  }
+
+  .cusc-discussion-empty-icon {
+    font-size: 52px;
+    color: var(--cusc-blue, #0056a1);
+    text-shadow: 0 6px 16px rgba(15, 23, 42, 0.35);
+  }
+
+   .cusc-discussion-empty-title {
+  font-size: 24px;            /* to hơn */
+  font-weight: 700;
+  letter-spacing: 0.02em;     /* chữ nhìn sắc hơn chút */
+  color: #0f172a;
+  text-shadow: 0 1px 2px rgba(15, 23, 42, 0.16);
+  margin: 0 0 12px;
+}
+
+.cusc-discussion-empty-subtitle {
+  font-size: 14px;
+  line-height: 1.8;           /* giãn dòng ra, dễ đọc hơn */
+  color: #6b7280;
+  max-width: 520px;           /* đoạn chữ rộng hơn chút */
+  margin: 0 0 26px;
+}
+
+
+
+  .cusc-discussion-empty-actions {
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .cusc-discussion-empty-primary {
+    border-radius: 999px;
+    padding-inline: 18px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* floating bubbles */
+  .cusc-discussion-empty-floating {
+    position: absolute;
+    inset: -120px -120px -80px -120px;  /* nới rộng vùng bay ra ngoài một chút */
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible;
+  }
+
+  .cusc-discussion-empty-bubble {
+    position: absolute;
+    border-radius: 999px;
+    background: radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 255, 255, 0.95),
+      rgba(148, 163, 184, 0.4)
+    );
+    opacity: 0.6;
+    filter: blur(.2px);
+    animation: cusc-float 22s ease-in-out infinite alternate;
+  }
+
+   .cusc-discussion-empty-bubble--1 {
+    width: 70px; height: 70px;
+    top: 4%; left: 6%;
+    animation-duration: 26s;
+  }
+
+  .cusc-discussion-empty-bubble--2 {
+    width: 60px; height: 60px;
+    top: 18%; right: 18%;
+    animation-duration: 24s;
+    animation-delay: -6s;
+  }
+
+  .cusc-discussion-empty-bubble--3 {
+    width: 46px; height: 46px;
+    bottom: 12%; left: 30%;
+    animation-duration: 20s;
+    animation-delay: -3s;
+  }
+
+  .cusc-discussion-empty-bubble--4 {
+    width: 54px; height: 54px;
+    bottom: 5%; right: 8%;
+    animation-duration: 28s;
+    animation-delay: -10s;
+  }
+
+  .cusc-discussion-empty-bubble--5 {
+    width: 32px; height: 32px;
+    top: 40%; left: 55%;
+    animation-duration: 18s;
+    animation-delay: -8s;
+  }
+
+  .cusc-discussion-empty-bubble--6 {
+    width: 40px; height: 40px;
+    top: 55%; right: 40%;
+    animation-duration: 30s;
+    animation-delay: -14s;
+  }
+}
+
+/* keyframes riêng cho empty state */
+@keyframes cusc-float {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(18px, -22px, 0) scale(1.06); }
+  100% { transform: translate3d(-14px, -32px, 0) scale(0.96); }
+}
+
+
+@keyframes cusc-orbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+/* ===== Nút tạo bài thảo luận ở màn hình trống ===== */
+
+.cusc-discussion-empty-actions {
+  margin-top: 4px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.cusc-discussion-empty-actions::before {
+  content: "";
+  position: absolute;
+  inset: 18px 16px 0;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(34, 197, 94, 0.35),
+    transparent 65%
+  );
+  filter: blur(10px);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+/* base */
+button.cusc-discussion-empty-primary {
+  position: relative;
+  z-index: 1;
+  border-radius: 999px;
+  padding: 10px 28px;
+  font-size: 14px;
+  font-weight: 600;
+
+  background-image: linear-gradient(135deg, #0fb68a, #22c55e);
+  background-color: #0fb68a;   /* fallback */
+  color: #ffffff;
+
+  border: 0 !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+
+  transform: translateY(0);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    filter 0.18s ease;
+}
+
+/* viền trắng mỏng luôn hiện */
+button.cusc-discussion-empty-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+/* hover */
+button.cusc-discussion-empty-primary:hover {
+  background-image: linear-gradient(135deg, #0fb68a, #22c55e);
+  background-color: #0fb68a;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.26);
+}
+
+/* active */
+button.cusc-discussion-empty-primary:active {
+  background-image: linear-gradient(135deg, #0fb68a, #22c55e);
+  background-color: #0fb68a;
+  color: #ffffff;
+
+  transform: translateY(0);
+  filter: brightness(0.97);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+}
+
+/* HARD OVERRIDE: tắt viền focus xanh trong màn hình trống Discussion */
+.cusc-discussion-empty-wrapper *:focus,
+.cusc-discussion-empty-wrapper *:focus-visible,
+.cusc-discussion-empty-wrapper *:active:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.cusc-discussion-empty-wrapper .cusc-discussion-empty-primary,
+.cusc-discussion-empty-wrapper .cusc-discussion-empty-primary:hover,
+.cusc-discussion-empty-wrapper .cusc-discussion-empty-primary:active {
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18) !important;
+}
+
