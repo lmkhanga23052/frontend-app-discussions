@@ -1300,3 +1300,64 @@ button.cusc-discussion-empty-primary:active {
   height: 0 !important;
   position: static !important;
 }
+
+
+/* =================== CUSC – CREATE DISCUSSION BUTTON (GREEN MINT) =================== */
+.header-action-bar .btn-brand {
+  position: relative;
+  border-radius: 999px;
+  border: none;
+  padding: 0.45rem 1.8rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+
+  color: var(--txt-on, #ffffff);
+
+  /* dùng tông xanh ngọc riêng, KHÁC với các nút khác */
+  background-image: linear-gradient(
+    135deg,
+    #4630c4,
+    #4dbac9
+  );
+  background-size: 180% 180%;
+  background-position: 0% 50%;
+
+  box-shadow:
+    0 10px 26px rgba(16, 185, 129, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.14);
+
+  transition:
+    background-position 180ms ease-out,
+    transform 120ms ease-out,
+    box-shadow 120ms ease-out,
+    filter 120ms ease-out;
+}
+
+.header-action-bar .btn-brand:hover {
+  background-position: 100% 50%;
+  filter: brightness(1.04);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(16, 185, 129, 0.45);
+}
+
+.header-action-bar .btn-brand:active {
+  transform: translateY(0);
+  filter: brightness(0.98);
+  box-shadow: 0 5px 16px rgba(15, 23, 42, 0.3);
+}
+
+.header-action-bar .btn-brand:focus,
+.header-action-bar .btn-brand:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.9),
+    0 0 0 4px rgba(16, 185, 129, 0.5);
+}
+
+.header-action-bar .btn-brand:disabled,
+.header-action-bar .btn-brand[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
