@@ -274,6 +274,77 @@ header {
   cursor: pointer;
 }
 
+/* =================== CUSC – SEARCH FIELD =================== */
+/* Áp dụng cho tất cả SearchField.Advanced (posts + topic-search) */
+.pgn__search-field-advanced,
+.pgn__search-field {
+  --search-border: var(--line, #e5e7eb);
+  --search-bg: var(--card, #ffffff);
+
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 999px;
+  border: 1px solid var(--search-border);
+  background: var(--search-bg);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 120ms ease-out;
+
+  /* input bên trong */
+  .form-control {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent;
+    font-size: 0.875rem;
+    padding-inline: 0.9rem;
+    color: var(--txt, #1f2937);
+
+    &::placeholder {
+      color: var(--sub, #6b7280);
+      opacity: 0.9;
+    }
+  }
+
+  /* hover toàn khung */
+  &:hover {
+    border-color: rgba(0, 86, 161, 0.38); /* --cusc-blue */
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+    transform: translateY(-1px);
+  }
+
+  /* focus khi gõ */
+  &:focus-within {
+    border-color: var(--accent, #10B981);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.9),
+      0 0 0 4px rgba(16, 185, 129, 0.22);
+    transform: translateY(-1px);
+  }
+
+  /* ô chứa icon kính lúp */
+  .pointer-cursor-hover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.4rem;
+    border-left: 1px solid var(--line, #e5e7eb);
+    background: linear-gradient(
+      135deg,
+      rgba(0, 86, 161, 0.02),
+      rgba(16, 185, 129, 0.06)
+    );
+  }
+
+  .pointer-cursor-hover svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
 .filter-bar:focus-visible,
 .filter-bar:focus {
   outline: none;
@@ -507,6 +578,149 @@ header {
     transform: translateY(-1px);
   }
 }
+/* =================== CUSC – DISCUSSION SEARCH (NO BLACK BORDER) =================== */
+
+/* 1) TẮT sạch outline/box-shadow/border mặc định của Paragon + browser */
+.header-action-bar .pgn__searchfield,
+.header-action-bar .pgn__searchfield-form,
+.header-action-bar .pgn__searchfield *,
+.header-action-bar .pgn__searchfield-form * {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.header-action-bar .pgn__searchfield:focus,
+.header-action-bar .pgn__searchfield:focus-visible,
+.header-action-bar .pgn__searchfield:focus-within,
+.header-action-bar .pgn__searchfield-form:focus,
+.header-action-bar .pgn__searchfield-form:focus-visible,
+.header-action-bar .pgn__searchfield-form:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* 2) VẼ lại pill bằng ::before để không bị css khác đụng vào */
+
+/* form chứa input search */
+.header-action-bar .pgn__searchfield-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 0 0 260px;
+
+  border: 0 !important;
+  background: transparent;
+  border-radius: 999px;
+  padding: 0;
+  overflow: visible;
+}
+
+/* pill trắng + viền xám nhẹ */
+.header-action-bar .pgn__searchfield-form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid var(--line, #e5e7eb);
+  background: var(--card, #ffffff);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  pointer-events: none;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 120ms ease-out;
+}
+
+/* hover pill */
+.header-action-bar .pgn__searchfield-form:hover::before {
+  border-color: rgba(0, 86, 161, 0.38); /* --cusc-blue */
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+}
+
+/* focus pill – glow xanh ngọc, KHÔNG viền đen */
+.header-action-bar .pgn__searchfield-form:focus-within::before {
+  border-color: var(--accent, #10B981);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.9),
+    0 0 0 4px rgba(16, 185, 129, 0.22);
+}
+
+/* 3) Style input + icon bên trong */
+
+.header-action-bar .pgn__searchfield-form .form-control {
+  position: relative;
+  z-index: 1;                /* nằm trên ::before */
+
+  border: none !important;
+  background: transparent;
+  box-shadow: none !important;
+
+  font-size: 0.875rem;
+  padding-inline: 0.9rem;
+  color: var(--txt, #1f2937);
+
+  &::placeholder {
+    color: var(--sub, #6b7280);
+    opacity: 0.9;
+  }
+}
+
+.header-action-bar .pgn__searchfield-form .pointer-cursor-hover {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+
+  border-left: 1px solid var(--line, #e5e7eb);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 86, 161, 0.02),
+    rgba(16, 185, 129, 0.06)
+  );
+}
+
+
+/* CUSC – remove outer border of Discussion search wrapper */
+.header-action-bar .pgn__searchfield {
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent;
+  padding: 0;
+}
+
+/* đảm bảo khi focus cũng không hồi sinh border */
+.header-action-bar .pgn__searchfield:focus,
+.header-action-bar .pgn__searchfield:focus-visible,
+.header-action-bar .pgn__searchfield:focus-within {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* =================== CUSC – KILL DEFAULT SEARCH BORDERS =================== */
+/* Xoá khung vuông Paragon cho mọi searchfield (kể cả khi focus) */
+
+.pgn__searchfield,
+.pgn__searchfield-form {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Khi focus / focus-within / focus-visible cũng không được vẽ border + outline */
+.pgn__searchfield:focus,
+.pgn__searchfield:focus-visible,
+.pgn__searchfield:focus-within,
+.pgn__searchfield-form:focus,
+.pgn__searchfield-form:focus-visible,
+.pgn__searchfield-form:focus-within {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 
 .course-tabs-navigation {
@@ -527,7 +741,8 @@ header {
 }
 
 .on-focus:focus-within {
-  outline: 2px solid black;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .html-loader p:last-child {
@@ -1076,3 +1291,12 @@ button.cusc-discussion-empty-primary:active {
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18) !important;
 }
 
+/* CUSC – remove Paragon double-focus border on search */
+.header-action-bar .pgn__searchfield::after,
+.header-action-bar .pgn__searchfield.has-focus:not(.pgn__searchfield--external)::after {
+  content: none !important;
+  border: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: static !important;
+}

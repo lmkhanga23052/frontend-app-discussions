@@ -71,6 +71,7 @@ const Search = () => {
 
   return (
     <SearchField.Advanced
+      className="cusc-discussion-search"
       onClear={onClear}
       onChange={onChange}
       onSubmit={onSubmit}
