@@ -1000,6 +1000,8 @@ th, td {
     overflow: visible;
   }
 
+  
+
 
   .cusc-discussion-empty-card {
     /* CHỈ CÒN KHUNG CHỨA NỘI DUNG, KHÔNG NỀN RIÊNG */
@@ -1324,7 +1326,7 @@ button.cusc-discussion-empty-primary:active {
   background-position: 0% 50%;
 
   box-shadow:
-    0 10px 26px rgba(16, 185, 129, 0.35),
+    0 10px 26px rgba(108, 106, 196, 0.35),
     0 0 0 1px rgba(255, 255, 255, 0.14);
 
   transition:
@@ -1338,7 +1340,7 @@ button.cusc-discussion-empty-primary:active {
   background-position: 100% 50%;
   filter: brightness(1.04);
   transform: translateY(-1px);
-  box-shadow: 0 14px 32px rgba(16, 185, 129, 0.45);
+  box-shadow: 0 14px 32px rgba(16, 69, 185, 0.45);
 }
 
 .header-action-bar .btn-brand:active {
@@ -1361,3 +1363,220 @@ button.cusc-discussion-empty-primary:active {
   cursor: not-allowed;
   box-shadow: none;
 }
+
+
+/* =================== CUSC – DISCUSSION LIST (LEFT COLUMN) =================== */
+/* Nếu đã khai báo các token này ở file khác thì có thể bỏ block :root này */
+:root {
+  --cusc-blue: #0056A1;
+  --accent: #10B981;
+  --bg: #ffffff;
+  --card: #ffffff;
+  --line: #e5e7eb;
+  --txt: #1f2937;
+  --sub: #6b7280;
+  --txt-on: #ffffff;
+}
+
+/* Nền khu vực discussion posts */
+.discussion-posts {
+  background-color: var(--bg);
+}
+
+/* Bỏ border list-group mặc định và cho chút padding */
+.discussion-posts .list-group.list-group-flush {
+  border: 0;
+  background: transparent;
+  padding: 4px 8px 20px;
+}
+
+/* Link bao từng bài – bỏ border-bottom cũ */
+.discussion-posts .discussion-post {
+  display: block;
+  padding: 0;
+  margin: 0;
+  text-decoration: none !important;
+  color: var(--txt);
+}
+
+.discussion-posts .discussion-post.border-bottom {
+  border-bottom: none !important;
+}
+
+/* ========== CARD CHÍNH (div bên trong Link) ========== */
+.discussion-posts .discussion-post > div {
+  position: relative;
+  margin: 4px 0;
+  border-radius: 14px;
+  border: 1px solid var(--line) !important;  /* override border-primary-500 */
+  background-color: var(--card);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+  display: flex;
+  align-items: flex-start;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+/* Hover: nổi nhẹ lên */
+.discussion-posts .discussion-post:hover > div,
+.discussion-posts .discussion-post:focus-visible > div {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  border-color: rgba(0, 86, 161, 0.4);
+  background-color: #f9fbff;
+}
+
+/* Bài đã đọc (bg-light-300) – thay bằng nền rất nhẹ */
+.discussion-posts .discussion-post .bg-light-300 {
+  background-color: #f9fafb !important;
+}
+
+/* ========== CARD ĐANG CHỌN (có class post-summary-card-selected) ========== */
+/* Xoá border-right cũ, dùng left stripe + shadow đậm hơn */
+.discussion-posts .discussion-post > div.post-summary-card-selected {
+  border-right-width: 0 !important;
+  border-right-style: none !important;
+  border-color: rgba(0, 86, 161, 0.85) !important;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.2);
+  background-color: #ffffff;
+}
+
+/* Thanh xanh bên trái giống mẫu */
+.discussion-posts .discussion-post > div.post-summary-card-selected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 999px;
+  background-image: linear-gradient(
+    180deg,
+    var(--cusc-blue),
+    var(--accent)
+  );
+}
+
+/* ========== AVATAR & KHỐI NỘI DUNG ========== */
+/* Avatar ở PostHeader đứng bên trái – chỉ tinh chỉnh nhẹ */
+.discussion-posts .discussion-post .avarat-img-position,
+.discussion-posts .discussion-post .question-icon-size {
+  /* giữ kích thước từ SCSS gốc, không chỉnh mạnh để khỏi vỡ layout */
+}
+
+/* Cột nội dung (chứa title + preview + meta) */
+.discussion-posts .discussion-post > div > .d-flex.flex-column.flex-fill {
+  min-width: 0;
+}
+
+/* Title (TEST TEST) – cho đậm, dễ đọc hơn */
+.discussion-posts .discussion-post .text-truncate span:first-child {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--txt);
+}
+
+/* Preview text mờ hơn một chút */
+.discussion-posts .discussion-post .text-truncate span:nth-child(2) {
+  font-size: 13px;
+  color: var(--sub);
+}
+
+/* Author dòng dưới (admin / ẩn danh) */
+.discussion-posts .discussion-post .font-style.text-primary-500,
+.discussion-posts .discussion-post .font-style.text-primary-500 a,
+.discussion-posts .discussion-post .font-style a {
+  font-size: 13px;
+  color: var(--cusc-blue) !important;
+}
+
+/* ========== META ROW (like, comment, badge "2 mới", time) ========== */
+.discussion-posts .discussion-post .post-summary-like-dimensions,
+.discussion-posts .discussion-post .post-summary-comment-count-dimensions,
+.discussion-posts .discussion-post .post-summary-icons-dimensions {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Hàng meta: chữ nhỏ + xám */
+.discussion-posts .discussion-post .d-flex.align-items-center.text-gray-700 {
+  font-size: 13px;
+  color: var(--sub) !important;
+}
+
+/* Badge "mới" / unread – làm pill xanh nổi bật */
+.discussion-posts .discussion-post .badge-success,
+.discussion-posts .discussion-post .badge.badge-success {
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  background-color: var(--accent) !important;
+  color: var(--txt-on) !important;
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.3);
+}
+
+/* Thời gian (9h, 1d) đẩy sang phải, nhỏ + mờ */
+.discussion-posts .discussion-post .post-summary-timestamp {
+  font-size: 12px !important;
+  color: var(--sub) !important;
+}
+
+/* Star ở góc phải – giống prototype, màu xanh sáng */
+.discussion-posts .discussion-post .post-summary-icons-dimensions.text-gray-700 {
+  color: #3b82f6 !important;
+}
+
+/* Cho khoảng cách giữa các card thoáng hơn trên mobile */
+@media (max-width: 768px) {
+  .discussion-posts .list-group.list-group-flush {
+    padding: 4px 4px 16px;
+  }
+
+  .discussion-posts .discussion-post > div {
+    margin: 6px 0;
+    border-radius: 12px;
+  }
+}
+/* ================= FIX THANH XANH BÊN TRÁI ================= */
+
+/* Tắt thanh gradient cũ nếu còn */
+.discussion-posts .discussion-post > div.post-summary-card-selected::before {
+  content: none !important;
+}
+
+/* Card được chọn: dùng border-left giống mockup */
+.discussion-posts .discussion-post > div.post-summary-card-selected {
+  /* giữ lại bo góc + shadow đẹp */
+  border-radius: 16px;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.20);
+  background-color: #ffffff;
+
+  /* viền chung rất nhạt */
+  border: 1px solid #e5e7eb !important;
+
+  /* thanh xanh bên trái ôm sát mép, full chiều cao */
+  border-left-width: 4px !important;
+  border-left-style: solid !important;
+  border-left-color: #0056A1 !important; /* CUSC blue */
+
+  /* đẩy nội dung ra 1 chút để không bị sát thanh */
+  padding-left: 18px;
+}
+
+
+/* =================== CUSC – Vách ngăn giữa list & empty page =================== */
+/* Chỉ áp dụng cho sidebar Discussions (data-testid="sidebar") trên màn hình lớn */
+@media (min-width: 768px) {
+  [data-testid="sidebar"].min-content-height {
+    border-right: 1px solid rgba(148, 163, 184, 0.35);  /* xanh CUSC nhạt */
+  /* line xám mềm giữa 2 cột */
+    background-color: #ffffff;                           /* đảm bảo cột list là nền trắng */
+  }
+}
+
+
+
