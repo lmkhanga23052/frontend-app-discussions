@@ -1311,29 +1311,31 @@ button.cusc-discussion-empty-primary:active {
   border: none;
   padding: 0.45rem 1.8rem;
   font-weight: 700;
-  font-size: 0.9rem;
   letter-spacing: 0.01em;
-
   color: var(--txt-on, #ffffff);
-
-  /* dùng tông xanh ngọc riêng, KHÁC với các nút khác */
-  background-image: linear-gradient(
-    135deg,
-    #4630c4,
-    #4dbac9
-  );
-  background-size: 180% 180%;
+  background-image: linear-gradient(135deg, #4630c4, #4dbac9);
   background-position: 0% 50%;
-
-  box-shadow:
-    0 10px 26px rgba(108, 106, 196, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.14);
-
+  background-size: 180% 180%;
+  box-shadow: 0 10px 26px rgba(108, 106, 196, 0.35),
+              0 0 1px rgba(255, 255, 255, 0.14);
   transition:
     background-position 180ms ease-out,
     transform 120ms ease-out,
     box-shadow 120ms ease-out,
     filter 120ms ease-out;
+
+  /* 👇 TẮT focus ring đỏ cho riêng nút này */
+  outline: none;
+  --pgn-btn-focus-outline-color: transparent;
+  --pgn-btn-focus-border-color: transparent;
+}
+
+/* Đảm bảo khi focus vẫn không nhảy ring lên lại */
+.header-action-bar .btn-brand:focus,
+.header-action-bar .btn-brand:focus-visible {
+  outline: none !important;
+  box-shadow: 0 10px 26px rgba(108, 106, 196, 0.35),
+              0 0 1px rgba(255, 255, 255, 0.14) !important;
 }
 
 .header-action-bar .btn-brand:hover {
@@ -1650,7 +1652,7 @@ button.cusc-discussion-empty-primary:active {
 
     /* ===== List replies (.mx-4[role="list"]) + bubbles ===== */
 .mx-4[role="list"] {
-  margin-top: 32px !important;  /* ĐẨY XUỐNG NHIỀU HƠN để dropdown không bị card che */
+  margin-top: px !important;  /* ĐẨY XUỐNG NHIỀU HƠN để dropdown không bị card che */
   margin-bottom: 24px;
   position: relative;
   z-index: 1;
