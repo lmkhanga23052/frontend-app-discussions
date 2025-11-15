@@ -1,4 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 
 import {
   Button, Dropdown, ModalPopup, useToggle,
@@ -23,7 +27,7 @@ const CommentSortDropdown = () => {
   const handleActions = useCallback((reverseOrder) => {
     close();
     dispatch(setCommentSortOrder(reverseOrder));
-  }, []);
+  }, [close, dispatch]);
 
   const enableCommentsSortTour = useCallback((enabled) => {
     const data = {
@@ -31,14 +35,14 @@ const CommentSortDropdown = () => {
       tourName: 'response_sort',
     };
     dispatch(updateUserDiscussionsTourByName(data));
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     enableCommentsSortTour(true);
     return () => {
       enableCommentsSortTour(false);
     };
-  }, []);
+  }, [enableCommentsSortTour]);
 
   return (
     <>
@@ -56,11 +60,15 @@ const CommentSortDropdown = () => {
           })}
         </Button>
       </div>
+
       <div className="actions-dropdown">
         <ModalPopup
-          onClose={close}
+          /* 👇 Quan trọng: render popup ra ngoài card, tránh bị che */
+          withPortal
+          placement="bottom-end"
           positionRef={target}
           isOpen={isOpen}
+          onClose={close}
         >
           <div
             className="bg-white p-1 shadow d-flex flex-column"
