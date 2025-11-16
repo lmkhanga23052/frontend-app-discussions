@@ -5,9 +5,8 @@
 @import "~@edx/frontend-component-header/dist/index";
 
 body,
-#main
-{
-  font-size: 14px ;
+#main {
+  font-size: 14px;
 }
 
 .btn,
@@ -24,7 +23,7 @@ body,
 }
 
 .btn-plain {
-    background-color: var(--pgn-color-card-bg-base) !important;
+  background-color: var(--pgn-color-card-bg-base) !important;
 }
 
 #post,
@@ -171,7 +170,7 @@ body,
   background-color: unset !important;
 }
 
-.learner > a:hover {
+.learner>a:hover {
   background-color: var(--pgn-color-light-300);
 }
 
@@ -265,6 +264,7 @@ header {
     width: 18px !important;
     height: 18px !important;
   }
+
   h4 {
     font-size: 16px !important;
   }
@@ -311,7 +311,8 @@ header {
 
   /* hover toàn khung */
   &:hover {
-    border-color: rgba(0, 86, 161, 0.38); /* --cusc-blue */
+    border-color: rgba(0, 86, 161, 0.38);
+    /* --cusc-blue */
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
     transform: translateY(-1px);
   }
@@ -332,11 +333,9 @@ header {
     justify-content: center;
     min-width: 2.4rem;
     border-left: 1px solid var(--line, #e5e7eb);
-    background: linear-gradient(
-      135deg,
-      rgba(0, 86, 161, 0.02),
-      rgba(16, 185, 129, 0.06)
-    );
+    background: linear-gradient(135deg,
+        rgba(0, 86, 161, 0.02),
+        rgba(16, 185, 129, 0.06));
   }
 
   .pointer-cursor-hover svg {
@@ -360,29 +359,43 @@ header {
       font-size: 18px !important;
       font-weight: 400;
       line-height: 28px;
-    };
+    }
+
+    ;
 
     span {
       font-weight: 500;
       line-height: 24px;
-    };
-  };
+    }
+
+    ;
+  }
+
+  ;
 
   .container-xl {
     .course-title-lockup {
       font-size: 1.125rem !important;
-    };
+    }
+
+    ;
 
     .logo {
       margin-top: 2px;
-    };
-  };
+    }
+
+    ;
+  }
+
+  ;
 
   span:first-child {
     font-size: 14px !important;
     margin-top: 1px !important;
     margin-bottom: -1px !important;
-  };
+  }
+
+  ;
 }
 
 #courseTabsNavigation {
@@ -399,7 +412,9 @@ header {
     .nav-item {
       padding-bottom: 8px;
     }
-  };
+  }
+
+  ;
 }
 
 .min-content-height {
@@ -411,14 +426,14 @@ header {
   box-shadow: 0px 2px 4px rgb(0 0 0 / 15%), 0px 2px 8px rgb(0 0 0 / 15%);
   top: 0;
 
-  .nav-button-group{
-    .nav-item:not(:last-child){
+  .nav-button-group {
+    .nav-item:not(:last-child) {
       .nav-link {
-          border-right: 0;
+        border-right: 0;
 
-          @media screen and (max-width: 567px) {
-            border-right: solid 1px #e9e6e4;
-          }
+        @media screen and (max-width: 567px) {
+          border-right: solid 1px #e9e6e4;
+        }
       }
     }
   }
@@ -568,7 +583,7 @@ header {
   }
 
   .nav-link.active,
-  .show > .nav-link {
+  .show>.nav-link {
     color: var(--txt-on, #ffffff);
     border-color: transparent;
     background:
@@ -578,6 +593,7 @@ header {
     transform: translateY(-1px);
   }
 }
+
 /* =================== CUSC – DISCUSSION SEARCH (NO BLACK BORDER) =================== */
 
 /* 1) TẮT sạch outline/box-shadow/border mặc định của Paragon + browser */
@@ -635,7 +651,8 @@ header {
 
 /* hover pill */
 .header-action-bar .pgn__searchfield-form:hover::before {
-  border-color: rgba(0, 86, 161, 0.38); /* --cusc-blue */
+  border-color: rgba(0, 86, 161, 0.38);
+  /* --cusc-blue */
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
 }
 
@@ -651,7 +668,8 @@ header {
 
 .header-action-bar .pgn__searchfield-form .form-control {
   position: relative;
-  z-index: 1;                /* nằm trên ::before */
+  z-index: 1;
+  /* nằm trên ::before */
 
   border: none !important;
   background: transparent;
@@ -677,11 +695,9 @@ header {
   min-width: 2.4rem;
 
   border-left: 1px solid var(--line, #e5e7eb);
-  background: linear-gradient(
-    135deg,
-    rgba(0, 86, 161, 0.02),
-    rgba(16, 185, 129, 0.06)
-  );
+  background: linear-gradient(135deg,
+      rgba(0, 86, 161, 0.02),
+      rgba(16, 185, 129, 0.06));
 }
 
 
@@ -726,7 +742,8 @@ header {
 .course-tabs-navigation {
   .nav a {
     &:hover {
-      background-color: var(--pgn-color-light-300) !important;;
+      background-color: var(--pgn-color-light-300) !important;
+      ;
     }
   }
 }
@@ -836,11 +853,11 @@ code {
   line-height: 28px !important;
 }
 
-.usabilla_live_button_container{
+.usabilla_live_button_container {
   right: 0px !important;
 }
 
-.learning-header{
+.learning-header {
   z-index: 4;
   position: relative;
   background-color: #fff;
@@ -862,7 +879,8 @@ code {
   width: 32.188rem !important;
 }
 
-th, td {
+th,
+td {
   border: 1px dashed var(--pgn-color-gray-200);
   padding: 0.4rem;
   white-space: nowrap;
@@ -891,7 +909,7 @@ th, td {
   .pgn__modal,
   .pgn__form-label,
   .dropdown-menu,
-  .tox-tbtn, 
+  .tox-tbtn,
   .tooltip {
     font-size: 10px !important;
   }
@@ -978,8 +996,10 @@ th, td {
 /* =================== CUSC — Discussion Empty State =================== */
 
 .cusc-discussion-empty-wrapper {
-  position: relative;          /* NEW: để bubble bám theo toàn vùng này */
-  overflow: hidden;            /* tránh tràn ra ngoài scrollbar */
+  position: relative;
+  /* NEW: để bubble bám theo toàn vùng này */
+  overflow: hidden;
+  /* tránh tràn ra ngoài scrollbar */
   padding: 32px 48px 40px;
   background:
     radial-gradient(140% 140% at 10% 0%, rgba(0, 86, 161, 0.12), transparent 55%),
@@ -1000,16 +1020,18 @@ th, td {
     overflow: visible;
   }
 
-  
+
 
 
   .cusc-discussion-empty-card {
     /* CHỈ CÒN KHUNG CHỨA NỘI DUNG, KHÔNG NỀN RIÊNG */
     position: relative;
-    max-width: 760px;     /* giữ nội dung gọn ở giữa */
+    max-width: 760px;
+    /* giữ nội dung gọn ở giữa */
     width: 100%;
     margin-inline: auto;
-    padding: 0;           /* padding sẽ để cho inner */
+    padding: 0;
+    /* padding sẽ để cho inner */
     background: transparent;
     border: 0;
     box-shadow: none;
@@ -1088,22 +1110,26 @@ th, td {
     text-shadow: 0 6px 16px rgba(15, 23, 42, 0.35);
   }
 
-   .cusc-discussion-empty-title {
-  font-size: 24px;            /* to hơn */
-  font-weight: 700;
-  letter-spacing: 0.02em;     /* chữ nhìn sắc hơn chút */
-  color: #0f172a;
-  text-shadow: 0 1px 2px rgba(15, 23, 42, 0.16);
-  margin: 0 0 12px;
-}
+  .cusc-discussion-empty-title {
+    font-size: 24px;
+    /* to hơn */
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    /* chữ nhìn sắc hơn chút */
+    color: #0f172a;
+    text-shadow: 0 1px 2px rgba(15, 23, 42, 0.16);
+    margin: 0 0 12px;
+  }
 
-.cusc-discussion-empty-subtitle {
-  font-size: 14px;
-  line-height: 1.8;           /* giãn dòng ra, dễ đọc hơn */
-  color: #6b7280;
-  max-width: 520px;           /* đoạn chữ rộng hơn chút */
-  margin: 0 0 26px;
-}
+  .cusc-discussion-empty-subtitle {
+    font-size: 14px;
+    line-height: 1.8;
+    /* giãn dòng ra, dễ đọc hơn */
+    color: #6b7280;
+    max-width: 520px;
+    /* đoạn chữ rộng hơn chút */
+    margin: 0 0 26px;
+  }
 
 
 
@@ -1122,7 +1148,8 @@ th, td {
   /* floating bubbles */
   .cusc-discussion-empty-floating {
     position: absolute;
-    inset: -120px -120px -80px -120px;  /* nới rộng vùng bay ra ngoài một chút */
+    inset: -120px -120px -80px -120px;
+    /* nới rộng vùng bay ra ngoài một chút */
     pointer-events: none;
     z-index: 0;
     overflow: visible;
@@ -1131,53 +1158,63 @@ th, td {
   .cusc-discussion-empty-bubble {
     position: absolute;
     border-radius: 999px;
-    background: radial-gradient(
-      circle at 30% 20%,
-      rgba(255, 255, 255, 0.95),
-      rgba(148, 163, 184, 0.4)
-    );
+    background: radial-gradient(circle at 30% 20%,
+        rgba(255, 255, 255, 0.95),
+        rgba(148, 163, 184, 0.4));
     opacity: 0.6;
     filter: blur(.2px);
     animation: cusc-float 22s ease-in-out infinite alternate;
   }
 
-   .cusc-discussion-empty-bubble--1 {
-    width: 70px; height: 70px;
-    top: 4%; left: 6%;
+  .cusc-discussion-empty-bubble--1 {
+    width: 70px;
+    height: 70px;
+    top: 4%;
+    left: 6%;
     animation-duration: 26s;
   }
 
   .cusc-discussion-empty-bubble--2 {
-    width: 60px; height: 60px;
-    top: 18%; right: 18%;
+    width: 60px;
+    height: 60px;
+    top: 18%;
+    right: 18%;
     animation-duration: 24s;
     animation-delay: -6s;
   }
 
   .cusc-discussion-empty-bubble--3 {
-    width: 46px; height: 46px;
-    bottom: 12%; left: 30%;
+    width: 46px;
+    height: 46px;
+    bottom: 12%;
+    left: 30%;
     animation-duration: 20s;
     animation-delay: -3s;
   }
 
   .cusc-discussion-empty-bubble--4 {
-    width: 54px; height: 54px;
-    bottom: 5%; right: 8%;
+    width: 54px;
+    height: 54px;
+    bottom: 5%;
+    right: 8%;
     animation-duration: 28s;
     animation-delay: -10s;
   }
 
   .cusc-discussion-empty-bubble--5 {
-    width: 32px; height: 32px;
-    top: 40%; left: 55%;
+    width: 32px;
+    height: 32px;
+    top: 40%;
+    left: 55%;
     animation-duration: 18s;
     animation-delay: -8s;
   }
 
   .cusc-discussion-empty-bubble--6 {
-    width: 40px; height: 40px;
-    top: 55%; right: 40%;
+    width: 40px;
+    height: 40px;
+    top: 55%;
+    right: 40%;
     animation-duration: 30s;
     animation-delay: -14s;
   }
@@ -1185,15 +1222,28 @@ th, td {
 
 /* keyframes riêng cho empty state */
 @keyframes cusc-float {
-  0%   { transform: translate3d(0, 0, 0) scale(1); }
-  50%  { transform: translate3d(18px, -22px, 0) scale(1.06); }
-  100% { transform: translate3d(-14px, -32px, 0) scale(0.96); }
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(18px, -22px, 0) scale(1.06);
+  }
+
+  100% {
+    transform: translate3d(-14px, -32px, 0) scale(0.96);
+  }
 }
 
 
 @keyframes cusc-orbit {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 
@@ -1212,11 +1262,9 @@ th, td {
   position: absolute;
   inset: 18px 16px 0;
   border-radius: 999px;
-  background: radial-gradient(
-    circle at 50% 0%,
-    rgba(34, 197, 94, 0.35),
-    transparent 65%
-  );
+  background: radial-gradient(circle at 50% 0%,
+      rgba(34, 197, 94, 0.35),
+      transparent 65%);
   filter: blur(10px);
   opacity: 0.9;
   z-index: 0;
@@ -1232,7 +1280,8 @@ button.cusc-discussion-empty-primary {
   font-weight: 600;
 
   background-image: linear-gradient(135deg, #0fb68a, #22c55e);
-  background-color: #0fb68a;   /* fallback */
+  background-color: #0fb68a;
+  /* fallback */
   color: #ffffff;
 
   border: 0 !important;
@@ -1317,7 +1366,7 @@ button.cusc-discussion-empty-primary:active {
   background-position: 0% 50%;
   background-size: 180% 180%;
   box-shadow: 0 10px 26px rgba(108, 106, 196, 0.35),
-              0 0 1px rgba(255, 255, 255, 0.14);
+    0 0 1px rgba(255, 255, 255, 0.14);
   transition:
     background-position 180ms ease-out,
     transform 120ms ease-out,
@@ -1335,7 +1384,7 @@ button.cusc-discussion-empty-primary:active {
 .header-action-bar .btn-brand:focus-visible {
   outline: none !important;
   box-shadow: 0 10px 26px rgba(108, 106, 196, 0.35),
-              0 0 1px rgba(255, 255, 255, 0.14) !important;
+    0 0 1px rgba(255, 255, 255, 0.14) !important;
 }
 
 .header-action-bar .btn-brand:hover {
@@ -1406,11 +1455,12 @@ button.cusc-discussion-empty-primary:active {
 }
 
 /* ========== CARD CHÍNH (div bên trong Link) ========== */
-.discussion-posts .discussion-post > div {
+.discussion-posts .discussion-post>div {
   position: relative;
   margin: 4px 0;
   border-radius: 14px;
-  border: 1px solid var(--line) !important;  /* override border-primary-500 */
+  border: 1px solid var(--line) !important;
+  /* override border-primary-500 */
   background-color: var(--card);
   box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
   display: flex;
@@ -1423,8 +1473,8 @@ button.cusc-discussion-empty-primary:active {
 }
 
 /* Hover: nổi nhẹ lên */
-.discussion-posts .discussion-post:hover > div,
-.discussion-posts .discussion-post:focus-visible > div {
+.discussion-posts .discussion-post:hover>div,
+.discussion-posts .discussion-post:focus-visible>div {
   transform: translateY(-1px);
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
   border-color: rgba(0, 86, 161, 0.4);
@@ -1438,7 +1488,7 @@ button.cusc-discussion-empty-primary:active {
 
 /* ========== CARD ĐANG CHỌN (có class post-summary-card-selected) ========== */
 /* Xoá border-right cũ, dùng left stripe + shadow đậm hơn */
-.discussion-posts .discussion-post > div.post-summary-card-selected {
+.discussion-posts .discussion-post>div.post-summary-card-selected {
   border-right-width: 0 !important;
   border-right-style: none !important;
   border-color: rgba(0, 86, 161, 0.85) !important;
@@ -1447,7 +1497,7 @@ button.cusc-discussion-empty-primary:active {
 }
 
 /* Thanh xanh bên trái giống mẫu */
-.discussion-posts .discussion-post > div.post-summary-card-selected::before {
+.discussion-posts .discussion-post>div.post-summary-card-selected::before {
   content: '';
   position: absolute;
   left: 0;
@@ -1455,11 +1505,9 @@ button.cusc-discussion-empty-primary:active {
   bottom: 10px;
   width: 4px;
   border-radius: 999px;
-  background-image: linear-gradient(
-    180deg,
-    var(--cusc-blue),
-    var(--accent)
-  );
+  background-image: linear-gradient(180deg,
+      var(--cusc-blue),
+      var(--accent));
 }
 
 /* ========== AVATAR & KHỐI NỘI DUNG ========== */
@@ -1470,7 +1518,7 @@ button.cusc-discussion-empty-primary:active {
 }
 
 /* Cột nội dung (chứa title + preview + meta) */
-.discussion-posts .discussion-post > div > .d-flex.flex-column.flex-fill {
+.discussion-posts .discussion-post>div>.d-flex.flex-column.flex-fill {
   min-width: 0;
 }
 
@@ -1538,20 +1586,21 @@ button.cusc-discussion-empty-primary:active {
     padding: 4px 4px 16px;
   }
 
-  .discussion-posts .discussion-post > div {
+  .discussion-posts .discussion-post>div {
     margin: 6px 0;
     border-radius: 12px;
   }
 }
+
 /* ================= FIX THANH XANH BÊN TRÁI ================= */
 
 /* Tắt thanh gradient cũ nếu còn */
-.discussion-posts .discussion-post > div.post-summary-card-selected::before {
+.discussion-posts .discussion-post>div.post-summary-card-selected::before {
   content: none !important;
 }
 
 /* Card được chọn: dùng border-left giống mockup */
-.discussion-posts .discussion-post > div.post-summary-card-selected {
+.discussion-posts .discussion-post>div.post-summary-card-selected {
   /* giữ lại bo góc + shadow đẹp */
   border-radius: 16px;
   box-shadow: 0 20px 48px rgba(15, 23, 42, 0.20);
@@ -1563,7 +1612,8 @@ button.cusc-discussion-empty-primary:active {
   /* thanh xanh bên trái ôm sát mép, full chiều cao */
   border-left-width: 4px !important;
   border-left-style: solid !important;
-  border-left-color: #0056A1 !important; /* CUSC blue */
+  border-left-color: #0056A1 !important;
+  /* CUSC blue */
 
   /* đẩy nội dung ra 1 chút để không bị sát thanh */
   padding-left: 18px;
@@ -1574,9 +1624,11 @@ button.cusc-discussion-empty-primary:active {
 /* Chỉ áp dụng cho sidebar Discussions (data-testid="sidebar") trên màn hình lớn */
 @media (min-width: 768px) {
   [data-testid="sidebar"].min-content-height {
-    border-right: 1px solid rgba(148, 163, 184, 0.35);  /* xanh CUSC nhạt */
-  /* line xám mềm giữa 2 cột */
-    background-color: #ffffff;                           /* đảm bảo cột list là nền trắng */
+    border-right: 1px solid rgba(148, 163, 184, 0.35);
+    /* xanh CUSC nhạt */
+    /* line xám mềm giữa 2 cột */
+    background-color: #ffffff;
+    /* đảm bảo cột list là nền trắng */
   }
 }
 
@@ -1585,19 +1637,20 @@ button.cusc-discussion-empty-primary:active {
 /* LƯU Ý: không ảnh hưởng .cusc-discussion-empty-wrapper */
 
 [data-testid="sidebar"] {
+
   /* cột bên phải nằm ngay sau sidebar */
-  + .d-flex.bg-light-400.flex-column.w-75.w-xs-100.w-xl-75.align-items-center {
+  +.d-flex.bg-light-400.flex-column.w-75.w-xs-100.w-xl-75.align-items-center {
     /* Tokens cho thread view */
-    --cusc-blue: #0056A1;      /* CUSC blue, trùng empty page */
-    --accent: #10B981;         /* emerald */
+    --cusc-blue: #0056A1;
+    /* CUSC blue, trùng empty page */
+    --accent: #10B981;
+    /* emerald */
     --thread-bg: #ffffff;
     --thread-card: #ffffff;
     --thread-line: #e2e8f0;
-    --bubble-bg: radial-gradient(
-      circle at 30% 20%,
-      rgba(255, 255, 255, 0.98),
-      rgba(191, 219, 254, 0.92)
-    );
+    --bubble-bg: radial-gradient(circle at 30% 20%,
+        rgba(255, 255, 255, 0.98),
+        rgba(191, 219, 254, 0.92));
 
     background:
       radial-gradient(140% 140% at 10% 0%, rgba(0, 86, 161, 0.12), transparent 55%),
@@ -1609,11 +1662,12 @@ button.cusc-discussion-empty-primary:active {
     overflow: hidden;
 
     /* Giới hạn width nội dung bên phải */
-    > .d-flex.flex-column.w-100 {
+    >.d-flex.flex-column.w-100 {
       max-width: 1120px;
       width: 100%;
       margin: 0 auto;
-      position: relative;   /* nội dung nằm trên bubbles */
+      position: relative;
+      /* nội dung nằm trên bubbles */
       z-index: 1;
     }
 
@@ -1651,46 +1705,47 @@ button.cusc-discussion-empty-primary:active {
     }
 
     /* ===== List replies (.mx-4[role="list"]) + bubbles ===== */
-.mx-4[role="list"] {
-  margin-top: px !important;  /* ĐẨY XUỐNG NHIỀU HƠN để dropdown không bị card che */
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 1;
-  overflow: visible;
+    .mx-4[role="list"] {
+      margin-top: px !important;
+      /* ĐẨY XUỐNG NHIỀU HƠN để dropdown không bị card che */
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      overflow: visible;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    border-radius: 999px;
-    background: var(--bubble-bg);
-    opacity: 0.65;
-    filter: blur(0.3px);
-    pointer-events: none;
-    z-index: -1;
-    animation: cusc-float 20s ease-in-out infinite alternate;
-  }
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        background: var(--bubble-bg);
+        opacity: 0.65;
+        filter: blur(0.3px);
+        pointer-events: none;
+        z-index: -1;
+        animation: cusc-float 20s ease-in-out infinite alternate;
+      }
 
-  /* bubble #3 – dưới trái replies */
-  &::before {
-    width: 42px;
-    height: 42px;
-    bottom: 10%;
-    left: 22%;
-    animation-duration: 20s;
-    animation-delay: -3s;
-  }
+      /* bubble #3 – dưới trái replies */
+      &::before {
+        width: 42px;
+        height: 42px;
+        bottom: 10%;
+        left: 22%;
+        animation-duration: 20s;
+        animation-delay: -3s;
+      }
 
-  /* bubble #4 – dưới phải replies */
-  &::after {
-    width: 38px;
-    height: 38px;
-    bottom: 4%;
-    right: 16%;
-    animation-duration: 24s;
-    animation-delay: -9s;
-  }
-}
+      /* bubble #4 – dưới phải replies */
+      &::after {
+        width: 38px;
+        height: 38px;
+        bottom: 4%;
+        right: 16%;
+        animation-duration: 24s;
+        animation-delay: -9s;
+      }
+    }
 
 
     /* ===== CTA "Thêm phản hồi" + bubbles ===== */
@@ -1750,4 +1805,11 @@ button.cusc-discussion-empty-primary:active {
       }
     }
   }
+}
+
+
+#webpack-dev-server-client-overlay {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
