@@ -116,7 +116,7 @@ export const postThread = async (
     anonymousToPeers,
     groupId: cohort,
     enableInContextSidebar,
-    notifyAllLearners,
+    // notifyAllLearners,
     captchaToken: recaptchaToken,
   });
   const { data } = await getAuthenticatedHttpClient()
